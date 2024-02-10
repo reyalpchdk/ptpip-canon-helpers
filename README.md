@@ -33,7 +33,7 @@ Note IPv6 is not supported by these scripts. In my testing, the cameras only
 attempted IPv4. However, I have not tested an IPv6-only environment
 
 ### ptpip-canon-desc-helper.py
-Responds HTTP GET requests with an XML file containing a suitable description
+Responds HTTP GET requests with an XML file containing a suitable description.
 By default, started automatically by `ptpip-canon-upnp-helper.py`, so you
 shouldn't need to run it directly. When using native windows (mingw etc)
 python, it will be opened in a new window.
