@@ -23,7 +23,7 @@ for additional details.
 ### ptpip-canon-upnp-helper.py
 Responds to UPnP `M-SEARCH` requests for `upnp:rootdevice` and `ssdp:all`
 
-Note `ptpip-canon-upnp-helper.py responds` to requests for `upnp:rootdevice` and
+Note `ptpip-canon-upnp-helper.py` responds to requests for `upnp:rootdevice` and
 ssdp:all, so it may respond to requests from devices other than Canon cameras.
 The response also falsely identifies itself as a Windows server, because Canon
 firmware requires it. This is probably harmless in most cases, but SSDP/UPnP
