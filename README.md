@@ -23,12 +23,11 @@ for additional details.
 ### ptpip-canon-upnp-helper.py
 Responds to UPnP `M-SEARCH` requests for `upnp:rootdevice` and `ssdp:all`
 
-Note `ptpip-canon-upnp-helper.py` responds to requests for `upnp:rootdevice` and
-ssdp:all, so it may respond to requests from devices other than Canon cameras.
-The response also falsely identifies itself as a Windows server, because Canon
-firmware requires it. This is probably harmless in most cases, but SSDP/UPnP
-aware software might display the configured name in a UI, or conceivably become
-confused in some other way.
+Note `ptpip-canon-upnp-helper.py` may respond to these queries from devices
+other than Canon cameras.  The response also falsely identifies itself as a
+Windows server, because Canon firmware requires it. This is probably harmless in
+most cases, but SSDP/UPnP aware software might display the configured name in a
+UI, or conceivably become confused in some other way.
 
 Note IPv6 is not supported by these scripts. In my testing, the cameras only
 attempted IPv4. However, I have not tested an IPv6-only environment
@@ -103,18 +102,17 @@ To prevent the camera from timing out and closing the connection, use
 !con:ptp_get_object_handles()
 ```
 
-The screen will go black. To re-enable the screen, enter
+The screen will go black. To re-enable the screen, on DryOS cameras use
 ```
 =post_levent_to_ui(4482)
 ```
-for DryOS cameras, or
+or on VxWorks
 ```
 =post_levent_to_ui(4418)
 ```
-for VxWorks
 
-chdkptp starting from r1161 in the default configuration does both the above
-steps automatically, based on the settings
+chdkptp starting from r1161 in the default configuration does both of the
+above steps automatically, based on the settings
 ```
 cam_connect_set_ptp_mode
 cam_connect_unlock_ui
@@ -123,13 +121,13 @@ cam_connect_unlock_ui
 ## CHDK functionality over PTP/IP
 File transfers, non-shooting script and most other non-shooting related
 operations should work. Switching to shooting mode or shooting fail on some
-cameras. In some cases, this can work worked around with additional hacking.
+cameras. In some cases, this can be worked around with additional hacking.
 See the thread linked at the start for additional discussion.
 
 ## Disconnecting
 Use the Canon UI or `dis` in chdkptp.
 
-Use control+C to kill the scripts.
+Use control+c to kill the scripts.
 
 ## Changelog
 * 0.1.1 - 2024/02/09 Public repo, doc updates, no code changes
