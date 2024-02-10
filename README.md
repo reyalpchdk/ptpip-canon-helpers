@@ -42,8 +42,8 @@ python, it will be opened in a new window.
 ## Install / Dependencies
 * Python 3
 * Optionally, a venv
- * `python3 -m venv env/ptpip-helpers`
- * `. env/ptpip-helpers/bin/activate`
+   * `python3 -m venv env/ptpip-helpers`
+   * `. env/ptpip-helpers/bin/activate`
 * `pip install ssdpy`
 
 ## Connecting
